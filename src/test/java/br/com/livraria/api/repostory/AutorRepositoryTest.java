@@ -47,9 +47,19 @@ public class AutorRepositoryTest {
             //System.out.println("Autor atualizado com sucesso" + autorEncontrado);
         } else {
             System.out.println("Autor não encontrado");
-        }
-
-       
+        } 
     }
+
+    @Test
+    public void countTest() {
+        long quantidade = Repository.count();
+        System.out.println("Quantidade de autores: " + quantidade);
+    }
+
+    @Test
+    public void deleteTest() {
+        var id = UUID.fromString("0e7cc403-6108-4a48-85ed-5f408065fdb5");
+        Repository.deleteById(id);
+    }   
 
 }
